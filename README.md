@@ -7,8 +7,12 @@
 #### 空页面展示
 ![暂无数据](https://raw.githubusercontent.com/qianfei1993/BaseTableView/master/BaseTableView/image3.png)
 ![](https://raw.githubusercontent.com/qianfei1993/BaseTableView/master/BaseTableView/image4.png)
-#### 将部分delegate方法转为block方法，方便调用
-#### 集成无数据占位图，下拉刷新，上拉加载，调用即可实现相应功能
+
+## 介绍
+#### 集成MJRefresh与LYEmptyView第三方框架，封装UITableView，将部分delegate方法转为block方法，方便调用，集成无数据占位图，下拉刷新，上拉加载等功能；
+
+## 使用
+#### 创建UITableView继承自BaseTableView，调用block数据源方法；
 ```
 // block调用数据源方法
 self.tableView.numberOfRowsInSectionBlock = ^NSInteger(UITableView *tableView, NSInteger section) {
