@@ -10,7 +10,7 @@
 		B35545B42186B57E001991F7 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = B35545B02186B57D001991F7 /* image3.png */; };
 		B35545B62186B57E001991F7 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = B35545B22186B57E001991F7 /* image1.png */; };
 		B35545B72186B57E001991F7 /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = B35545B32186B57E001991F7 /* image4.png */; };
-		B35545B92186B693001991F7 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = B35545B82186B693001991F7 /* image2.png */; };
+		B35545BB2186DEA6001991F7 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = B35545BA2186DEA5001991F7 /* image2.png */; };
 		B3D1C1312178774B009A0104 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D1C1302178774B009A0104 /* AppDelegate.m */; };
 		B3D1C1342178774B009A0104 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D1C1332178774B009A0104 /* ViewController.m */; };
 		B3D1C1372178774B009A0104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D1C1352178774B009A0104 /* Main.storyboard */; };
@@ -78,7 +78,7 @@
 		B35545B02186B57D001991F7 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		B35545B22186B57E001991F7 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 		B35545B32186B57E001991F7 /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
-		B35545B82186B693001991F7 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		B35545BA2186DEA5001991F7 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image2.png; path = ../../../image2.png; sourceTree = "<group>"; };
 		B3D1C12C2178774B009A0104 /* BaseTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D1C12F2178774B009A0104 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3D1C1302178774B009A0104 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 				B3D1C1382178774E009A0104 /* Assets.xcassets */,
 				B3D1C13A2178774E009A0104 /* LaunchScreen.storyboard */,
 				B35545B22186B57E001991F7 /* image1.png */,
-				B35545B82186B693001991F7 /* image2.png */,
+				B35545BA2186DEA5001991F7 /* image2.png */,
 				B35545B02186B57D001991F7 /* image3.png */,
 				B35545B32186B57E001991F7 /* image4.png */,
 				B3D1C13D2178774E009A0104 /* Info.plist */,
@@ -510,8 +510,8 @@
 				B35545B42186B57E001991F7 /* image3.png in Resources */,
 				B3D1C1392178774E009A0104 /* Assets.xcassets in Resources */,
 				B3D1C1B121787841009A0104 /* MJRefresh.bundle in Resources */,
-				B35545B92186B693001991F7 /* image2.png in Resources */,
 				B3D1C1D421787F57009A0104 /* noNetwork@2x.png in Resources */,
+				B35545BB2186DEA6001991F7 /* image2.png in Resources */,
 				B3D1C1372178774B009A0104 /* Main.storyboard in Resources */,
 				B3D1C1D221787F4B009A0104 /* nodata@2x.png in Resources */,
 			);
