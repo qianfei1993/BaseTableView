@@ -16,7 +16,9 @@
     BaseEmptyView *emptyView = [BaseEmptyView emptyViewWithImageStr:imgName
                                                            titleStr:titleStr
                                                           detailStr:detailStr];
-    emptyView.isEmptyScrollEnabled = NO;
+    emptyView.autoShowEmptyView = NO;
+    emptyView.isEmptyScrollEnabled = YES;
+    emptyView.emptyViewIsCompleteCoverSuperView = YES;
     return emptyView;
 }
 
@@ -24,7 +26,9 @@
     BaseEmptyView *emptyView = [BaseEmptyView emptyViewWithImageStr:@"noNetwork@2x.png"
                                                            titleStr:@"无网络连接"
                                                           detailStr:@"请检查你的网络连接是否正确!"];
-    emptyView.isEmptyScrollEnabled = NO;
+    emptyView.autoShowEmptyView = NO;
+    emptyView.isEmptyScrollEnabled = YES;
+    emptyView.emptyViewIsCompleteCoverSuperView = YES;
     return emptyView;
 }
 

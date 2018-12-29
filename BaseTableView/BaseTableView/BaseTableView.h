@@ -15,12 +15,11 @@ typedef void(^tapReloadBlock) (void);
 typedef NS_OPTIONS(NSUInteger, EmptyViewState) {
     ///暂无数据
     EmptyViewStateNoMoreData = 0,
-    ///网络错误普遍处理
+    ///网络异常
     EmptyViewStateNetError,
 };
 
 @interface BaseTableView : UITableView
-
 
 // MJRefresh
 // 添加MJHeader
@@ -33,17 +32,15 @@ typedef NS_OPTIONS(NSUInteger, EmptyViewState) {
 //TableVIew  ReloadData
 - (void)baseReloadData;
 
-
 /**
  *  空页面  emptyView
  *
  *  @param state            空页面类型
- *  @param scrollEnabled    空页面是否可滑动
- *  @param imgName          空页面图片
- *  @param titleStr         空页面标题
- *  @param detailStr        空页面副标题
+ *  @param image            空页面图片
+ *  @param title            空页面标题
+ *  @param detail           空页面副标题
  */
-- (void)emptyViewState:(EmptyViewState)state scrollEnabled:(BOOL)scrollEnabled imgName:(NSString*)imgName titleStr:(NSString*)titleStr detailStr:(NSString*)detailStr;
+- (void)emptyViewState:(EmptyViewState)state withImage:(NSString*)image withTitle:(NSString*)title withDetail:(NSString*)detail;
 
 
 //UITableViewDelegate & UITableDatasource  => block
@@ -79,6 +76,5 @@ typedef NS_OPTIONS(NSUInteger, EmptyViewState) {
 // wUITableViewDelegate -- The user changes the selection.
 @property (nonatomic, copy) void (^didSelectRowAtIndexPathBlock)(UITableView *tableView, NSIndexPath *indexPath);
 @property (nonatomic, copy) void (^didDeselectRowAtIndexPathBlock)(UITableView *tableView, NSIndexPath *indexPath);
-
 
 @end

@@ -14,6 +14,4 @@
 
 + (instancetype)baseEmptyView;
 
-
-
 @end

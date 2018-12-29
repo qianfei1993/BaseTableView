@@ -12,7 +12,6 @@
 @interface BaseTableView ()<UITableViewDataSource,UITableViewDelegate>
 @end
 @implementation BaseTableView
-static NSString * identifier = nil;
 
 -(instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
     
@@ -55,7 +54,6 @@ static NSString * identifier = nil;
 ///添加MJHeader
 -(void)addMJHeader:(mjheaderBlock)block{
     self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        self.ly_emptyView.autoShowEmptyView = YES;
         block();
     }];
     [self.mj_header beginRefreshing];
@@ -72,21 +70,26 @@ static NSString * identifier = nil;
     [self.mj_footer endRefreshing];
 }
 
-
-//空页面设置
-- (void)emptyViewState:(EmptyViewState)state scrollEnabled:(BOOL)scrollEnabled imgName:(NSString*)imgName titleStr:(NSString*)titleStr detailStr:(NSString*)detailStr{
+/**
+ *  空页面  emptyView
+ *
+ *  @param state            空页面类型
+ *  @param image            空页面图片
+ *  @param title            空页面标题
+ *  @param detail           空页面副标题
+ */
+- (void)emptyViewState:(EmptyViewState)state withImage:(NSString*)image withTitle:(NSString*)title withDetail:(NSString*)detail{
     switch (state) {
         case EmptyViewStateNoMoreData:
-            self.ly_emptyView = [BaseEmptyView baseEmptyViewImage:imgName titleStr:titleStr detailStr:detailStr];
+            self.ly_emptyView = [BaseEmptyView baseEmptyViewImage:image titleStr:title detailStr:detail];
             break;
         case EmptyViewStateNetError:
             self.ly_emptyView = [BaseEmptyView baseEmptyView];
+             [self endMJRefresh];
             break;
         default:
             break;
     }
-    self.ly_emptyView.isEmptyScrollEnabled = scrollEnabled;
-    self.ly_emptyView.autoShowEmptyView = NO;
     __weak typeof(self) weakSelf = self;
     [self.ly_emptyView setTapContentViewBlock:^(){
         [weakSelf.mj_header beginRefreshing];
@@ -103,22 +106,27 @@ static NSString * identifier = nil;
     _baseRowHeight = baseRowHeight;
     self.rowHeight = _baseRowHeight;
 }
+
 -(void)setBaseSectionHeaderHeight:(CGFloat)baseSectionHeaderHeight{
     _baseSectionHeaderHeight = baseSectionHeaderHeight;
     self.sectionHeaderHeight = _baseSectionHeaderHeight;
 }
+
 -(void)setBaseSectionFooterHeight:(CGFloat)baseSectionFooterHeight{
     _baseSectionFooterHeight = baseSectionFooterHeight;
     self.sectionFooterHeight = _baseSectionFooterHeight;
 }
+
 -(void)setBaseEstimatedRowHeight:(CGFloat)baseEstimatedRowHeight{
     _baseEstimatedRowHeight = baseEstimatedRowHeight;
     self.estimatedRowHeight = baseEstimatedRowHeight;
 }
+
 -(void)setBaseEstimatedSectionHeaderHeight:(CGFloat)baseEstimatedSectionHeaderHeight{
     _baseEstimatedSectionHeaderHeight = baseEstimatedSectionHeaderHeight;
     self.estimatedSectionHeaderHeight = _baseEstimatedSectionHeaderHeight;
 }
+
 -(void)setBaseEstimatedSectionFooterHeight:(CGFloat)baseEstimatedSectionFooterHeight{
     _baseEstimatedSectionFooterHeight = baseEstimatedSectionFooterHeight;
     self.estimatedSectionFooterHeight = baseEstimatedSectionFooterHeight;
@@ -131,12 +139,14 @@ static NSString * identifier = nil;
     }
     return 1;
 }
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (self.numberOfRowsInSectionBlock) {
         return self.numberOfRowsInSectionBlock(tableView, section);
     }
     return 1;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.cellForRowAtIndexPathBlock) {
         return self.cellForRowAtIndexPathBlock(tableView, indexPath);
@@ -176,7 +186,7 @@ static NSString * identifier = nil;
     if (self.baseSectionHeaderHeight) {
         return self.baseSectionHeaderHeight;
     }
-    return UITableViewAutomaticDimension;
+    return CGFLOAT_MIN;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if (self.heightForFooterInSectionBlock) {
@@ -185,7 +195,7 @@ static NSString * identifier = nil;
     if (self.baseSectionFooterHeight) {
         return self.baseSectionFooterHeight;
     }
-    return UITableViewAutomaticDimension;
+    return CGFLOAT_MIN;
 }
 
 #pragma mark UITableViewDelegate -- Variable estimatedheight support
@@ -196,7 +206,7 @@ static NSString * identifier = nil;
     if (self.baseEstimatedRowHeight) {
         return self.baseEstimatedRowHeight;
     }
-    return UITableViewAutomaticDimension;
+    return CGFLOAT_MIN;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section{
@@ -206,7 +216,7 @@ static NSString * identifier = nil;
     if (self.baseEstimatedSectionHeaderHeight) {
         return self.baseEstimatedSectionHeaderHeight;
     }
-    return UITableViewAutomaticDimension;
+    return CGFLOAT_MIN;
 }
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section{
     if (self.estimatedHeightForFooterInSectionBlock) {
@@ -215,7 +225,7 @@ static NSString * identifier = nil;
     if (self.baseEstimatedSectionFooterHeight) {
         return self.baseEstimatedSectionFooterHeight;
     }
-    return UITableViewAutomaticDimension;
+    return CGFLOAT_MIN;
 }
 
 
