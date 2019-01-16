@@ -5,12 +5,11 @@
 ![上拉加载](https://raw.githubusercontent.com/qianfei1993/BaseTableView/master/BaseTableView/image2.png)
 
 #### 空页面展示
-![暂无数据](https://raw.githubusercontent.com/qianfei1993/BaseTableView/master/BaseTableView/image3.png)
-![](https://raw.githubusercontent.com/qianfei1993/BaseTableView/master/BaseTableView/image4.png)
+![无数据](https://raw.githubusercontent.com/qianfei1993/BaseTableView/master/BaseTableView/image3.png)
+![无网络](https://raw.githubusercontent.com/qianfei1993/BaseTableView/master/BaseTableView/image4.png)
 
 ## 介绍
-#### 集成MJRefresh与LYEmptyView第三方框架，封装UITableView，将部分delegate方法转为block方法，方便调用，集成无数据占位图，下拉刷新，上拉加载等功能；
-
+#### TableView常用代理转为Block，集成下拉刷新，上拉加载，无数据页面，使列表实现更为简洁，依赖MJRefresh与LYEmptyView第三方框架；
 ## 使用
 #### 创建UITableView继承自BaseTableView，调用block数据源方法；
 ```
