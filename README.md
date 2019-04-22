@@ -12,7 +12,7 @@
 #### BaseTableView,封装的UITableView基类，集成下拉刷新，上拉加载，无数据页面，配置公共项，但是并没有将delegate与dataSource独立出来，依赖MJRefresh与LYEmptyView第三方框架；
 #### 创建UITableView继承自BaseTableView，常规UITableView写法，实现数据源与代理方法；
 ```
-#pragma mark —————UITableView—————
+#pragma mark —————BaseTableView—————
 - (void)initWithTableView{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -44,9 +44,9 @@
 ```
 
 #### BlockTableView，UITableView常用代理转为Block，集成下拉刷新，上拉加载，无数据页面，使列表实现更为简洁，依赖MJRefresh与LYEmptyView第三方框架；
-#### 创建UITableView继承自BaseTableView，调用block数据源方法；
+#### 创建UITableView继承自BlockTableView，调用block数据源方法；
 ```
-#pragma mark —————BaseTableView—————
+#pragma mark —————BlockTableView—————
 - (void)initWithBlockTableView{
  
     //下拉刷新
