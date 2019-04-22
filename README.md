@@ -46,7 +46,7 @@
 #### BlockTableView，UITableView常用代理转为Block，集成下拉刷新，上拉加载，无数据页面，使列表实现更为简洁，依赖MJRefresh与LYEmptyView第三方框架；
 #### 创建UITableView继承自BaseTableView，调用block数据源方法；
 ```
-#pragma mark —————BaseTableView—————
+#pragma mark —————BlockTableView—————
 - (void)initWithBlockTableView{
  
     //下拉刷新
