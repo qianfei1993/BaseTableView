@@ -11,26 +11,39 @@
 @implementation BaseEmptyView
 
 
-+ (instancetype)baseEmptyViewImage:(NSString*)imgName titleStr:(NSString*)titleStr detailStr:(NSString*)detailStr{
-    
-    BaseEmptyView *emptyView = [BaseEmptyView emptyViewWithImageStr:imgName
-                                                           titleStr:titleStr
-                                                          detailStr:detailStr];
-    emptyView.autoShowEmptyView = NO;
-    emptyView.isEmptyScrollEnabled = YES;
++ (instancetype)baseEmptyViewWithImage:(NSString*)imgName withTitle:(NSString*)title withDetail:(NSString*)detail{
+    BaseEmptyView *emptyView = [BaseEmptyView emptyViewWithImageStr:imgName titleStr:title detailStr:detail];
     emptyView.emptyViewIsCompleteCoverSuperView = YES;
+    emptyView.subViewMargin = 15;
+    emptyView.isEmptyScrollEnabled = YES;
+    emptyView.autoShowEmptyView = NO;
     return emptyView;
 }
 
-+ (instancetype)baseEmptyView{
+
++ (instancetype)baseEmptyViewNoData{
+    BaseEmptyView *emptyView = [BaseEmptyView emptyViewWithImageStr:@"nodata@2x.png"
+                                                           titleStr:@"暂无内容哦~"
+                                                          detailStr:nil];
+    emptyView.emptyViewIsCompleteCoverSuperView = YES;
+    emptyView.subViewMargin = 15;
+    emptyView.isEmptyScrollEnabled = YES;
+    emptyView.autoShowEmptyView = NO;
+    return emptyView;
+}
+
++ (instancetype)baseEmptyViewNoNetwork{
     BaseEmptyView *emptyView = [BaseEmptyView emptyViewWithImageStr:@"noNetwork@2x.png"
                                                            titleStr:@"无网络连接"
                                                           detailStr:@"请检查你的网络连接是否正确!"];
-    emptyView.autoShowEmptyView = NO;
-    emptyView.isEmptyScrollEnabled = YES;
     emptyView.emptyViewIsCompleteCoverSuperView = YES;
+    emptyView.subViewMargin = 15;
+    emptyView.isEmptyScrollEnabled = YES;
+    emptyView.autoShowEmptyView = NO;
     return emptyView;
 }
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

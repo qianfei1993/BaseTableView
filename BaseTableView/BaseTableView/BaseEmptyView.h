@@ -10,8 +10,10 @@
 
 @interface BaseEmptyView : LYEmptyView
 
-+ (instancetype)baseEmptyViewImage:(NSString*)imgName titleStr:(NSString*)titleStr detailStr:(NSString*)detailStr;
++ (instancetype)baseEmptyViewWithImage:(NSString*)imgName withTitle:(NSString*)title withDetail:(NSString*)detail;
 
-+ (instancetype)baseEmptyView;
++ (instancetype)baseEmptyViewNoData;
+
++ (instancetype)baseEmptyViewNoNetwork;
 
 @end

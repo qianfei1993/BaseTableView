@@ -1,18 +1,18 @@
 //
-//  TableViewCell.m
+//  SecondStyleTableViewCell.m
 //  BaseTableView
 //
-//  Created by damai on 2018/10/18.
-//  Copyright © 2018年 personal. All rights reserved.
+//  Created by damai on 2019/4/17.
+//  Copyright © 2019 personal. All rights reserved.
 //
 
-#import "TableViewCell.h"
+#import "SecondStyleTableViewCell.h"
 
-@implementation TableViewCell
+@implementation SecondStyleTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
